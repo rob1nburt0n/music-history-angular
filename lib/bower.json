@@ -1,0 +1,21 @@
+{
+  "name": "angular-101",
+  "version": "0.0.0",
+  "homepage": "",
+  "authors": [
+    "Robin Burton <1.robinburton@gmail.com>"
+  ],
+  "description": "Personal movie watch and plan to watch web app.",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "firebase": "~2.2.9",
+    "requirejs": "~2.1.20",
+    "require-handlebars-plugin": "~0.11.3",
+    "lodash": "~3.10.1",
+    "q": "~1.0.1",
+    "angular": "~1.4.4",
+    "angular-route": "~1.4.4"
+  }
+}

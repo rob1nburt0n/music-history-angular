@@ -1,0 +1,47 @@
+{
+  "songs": [
+     {
+      "id": 1,
+      "name": "Springstein",
+      "artist": "Eric Church",
+      "album": "Chief"
+     },
+     {
+      "id": 2,
+      "name": "Legs",
+      "artist": "ZZTop",
+      "album": "Eliminator"
+     },
+     {
+      "id": 3,
+      "name": "The Logical Song",
+      "artist": "Supertramp",
+      "album": "Breakfast in America"
+     },
+     {
+      "id": 4,
+      "name": "Another Brick in the Wall",
+      "artist": " Pink Floyd",
+      "album": "The Wall"
+     },
+     {
+      "id": 5,
+      "name": "Welcome to the Jungle",
+      "artist": "Guns & Roses",
+      "album": "Appetite for Destruction"
+     },
+     {
+      "id": 6,
+      "name": "Ironic",
+      "artist": "Alanis Morisette",
+      "album": "Jagged Little Pill"
+     },
+     {
+      "id": 7,
+      "name": "I Love Rock 'n' Roll",
+      "artist": "Joan Jett",
+      "album": "I Love Rock 'n' Roll"
+     }
+     
+  ]
+}

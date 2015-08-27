@@ -1,0 +1,27 @@
+   <div class="col-md-4"> 
+   <div id="Artist">
+     <h4>Artist:</h4>
+   <select
+     ng-model="theArtist"
+     ng-options="value.artist for value in songs | filter: theAlbum">
+   <option>--</option>
+   </select>
+   </div>
+   <div id="Album">
+     <h4>Album:</h4>
+   <select
+     ng-model="theAlbum"
+     ng-options="value.album for value in songs | filter: theArtist">
+   <option>--</option>
+   </select>
+   </div>
+   <br>
+   <div>
+   <h4>Add Song:</h4>
+      <input type="text" ng-model="newSong.name" placeholder="Song Name"></input><br>
+      <input type="text" ng-model="newSong.artist" placeholder="Artist"></input><br>
+      <input type="text" ng-model="newSong.album" placeholder="Album"></input><br>
+      <button ng-click="addSong()">Submit</button>
+    </div>
+   </select>
+   </div>

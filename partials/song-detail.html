@@ -1,0 +1,6 @@
+<div>
+  <div ng-repeat="song in songs | filter:{id:id}">
+    <h5>{{song.artist | capitalize }} | {{song.album | capitalize}} </h5>
+  </div>
+</div>
+

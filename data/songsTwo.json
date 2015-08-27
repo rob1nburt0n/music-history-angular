@@ -1,0 +1,25 @@
+{
+     "songs": [
+
+     {
+      "id": 5,
+      "name": "Welcome to the Jungle",
+      "artist": "Guns & Roses",
+      "album": "Appetite for Destruction"
+     },
+     {
+      "id": 6,
+      "name": "Ironic",
+      "artist": "Alanis Morisette",
+      "album": "Jagged Little Pill"
+     },
+     {
+      "id": 7,
+      "name": "I Love Rock 'n' Roll",
+      "artist": "Joan Jett",
+      "album": "I Love Rock 'n' Roll"
+     }
+
+
+  ]
+}

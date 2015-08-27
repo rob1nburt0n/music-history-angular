@@ -1,0 +1,24 @@
+<section>
+    <div class="col-md-8">
+    <div class="song-list" ng-repeat="song in songs | filter: songSearchText | filter: theArtist | filter: theAlbum">
+    <a href="#/songs/{{ song.id }}">
+      <h3>{{song.name | capitalize}} </h3>
+      </a>
+      <!-- <h5>{{song.artist | capitalize }} | {{song.album | capitalize}} </h5> -->
+      <button ng-click="delSong(song)">delete</button>
+    </div>
+    </div>
+</section>
+
+
+
+<!-- <section>
+  <div>
+    <input type="text" ng-model="songSearchText.name" />
+  </div>
+  <div ng-repeat="song in songs | filter: songSearchText">
+    <a href="#/songs/{{ song.id }}">{{song.name}}</a>
+  </div>
+  <a href="#.songs.new">Create New Song</a>
+</section>
+ -->
