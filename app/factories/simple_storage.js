@@ -11,6 +11,6 @@ app.factory("simple-storage", function() {
         return bucket[junk];
       }
     }
-  }
+  };
 
 });

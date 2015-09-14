@@ -1,17 +1,46 @@
-app.controller("SongDetailCtrl", ["$scope", "$q", "$routeParams", "song-storage", 
-  function($scope, $q, $routeParams, song_storage) {
+define([
+  'angular',
+  'angularRoute',
+  'firebase'
+], function(angular) {
+  angular.module('SongApp.SongDetail', ['ngRoute'])
+  .config(['$routeProvider', function($routeProvider) {
+    $routeProvider.when("/songs/:songId", {
+        templateUrl: "partials/song-detail.html",
+        controller: "SongDetailCtrl",
+        controllerAs: "detail"
+      });
+  }])
+  .controller('SongDetailCtrl', ["$routeParams", "$firebaseArray",
+    function($routeParams, $firebaseArray) {
+    
+      this.title = "Music History";
 
-  $scope.title = "Music History";
+      this.id = $routeParams.songId;
 
-  $scope.id = $routeParams.songId;
+      var ref = new Firebase("https://popping-torch-5281.firebaseio.com/songs");
 
-   song_storage.then(
-    function(promiseResolutionData) {
-      console.log("promiseResolutionData", promiseResolutionData);
-     $scope.songs = promiseResolutionData;
-    },
-   function(promiseRejectionError) {
-      console.log("error", promiseRejectionError);
-  });
+      this.songs = $firebaseArray(ref);
+
+      this.songs.$loaded()
+        .then(function(x) {
+          this.selectedSong = this.songs.$getRecord(this.id);
+        }.bind(this))
+        .catch(function(error) {
+          console.log("Error:", error);
+        }.bind(this));   
+  }]);
+});
+
+
+// define([
+//   'angular',
+//   'angularRoute'
+//   ], function(angular, angularRoute) {
+
+// angular.module("SongDetailCtrl", ["$routeParams", "$firebaseArray",
+//   function($routeParams, $firebaseArray) {
+
  
-}]);
+//  }]);
+// });

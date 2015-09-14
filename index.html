@@ -8,11 +8,11 @@
     <link type="style/css" rel="stylesheet" href="styles/main.css">
   </head>
 
-<body ng-app="Songapp">
+<body>
   <nav class="navbar-fixed-top">
       <ul class="nav nav-tabs">
         <li role="presentation" class="active"><a href="/#/">Music Home</a></li>
-        <li role="presentation"><a href="#">Add Music</a></li>
+        <li role="presentation"><a href="/#/songs/add">Add Music</a></li>
         <input class="filterBox" type="text" ng-model="songSearchText" placeholder="filter songs"/>
       </ul>
   </nav>
@@ -21,13 +21,27 @@
 
 
   <footer></footer>
+
+  <!-- 
+  <script src="lib/bower_components/requirejs/require.js"></script>
+  <script src="main-built.js"></script>
+   -->
+  <script data-main="app/app-config" src="lib/bower_components/requirejs/require.js"></script>
+
+<!-- 
+
   <script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="lib/bower_components/angular/angular.min.js"></script>
+  <script src="lib/bower_components/firebase/firebase.js"></script>
+  <script src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
   <script src="lib/bower_components/angular-route/angular-route.js"></script>
+
   <script src="app/app.js"></script> 
   <script src="app/controllers/songs.js"></script>
   <script src="app/controllers/detailCtrl.js"></script>
+  <script src="app/controllers/songFormCtrl.js"></script>
   <script src="app/filters/capitalize.js"></script>
-  <script src="app/factories/song_storage.js"></script>
+  <script src="app/directives/song-directive.js"></script> 
+ -->
 </body>
 </html>

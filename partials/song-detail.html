@@ -1,6 +1,11 @@
+
 <div>
-  <div ng-repeat="song in songs | filter:{id:id}">
-    <h5>{{song.artist | capitalize }} | {{song.album | capitalize}} </h5>
+  <div>
+    <h5>{{detail.selectedSong.artist}} | {{detail.selectedSong.album}} </h5>
+    
+    <!-- <ul class="rating">
+      <li class="{{star.class}}" ng-repeat="star in stars">&#9733;</li>
+    </ul> -->
   </div>
 </div>
 

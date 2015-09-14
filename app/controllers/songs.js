@@ -1,30 +1,44 @@
-app.controller("SongCtrl", ["$scope", "$q","song-storage", function($scope, $q, song_storage) {
-  $scope.title = "Music History";
+define([
+  'angular',
+  'angularRoute',
+  'firebase'
+], function(angular) {
+  angular.module('SongApp.song', ['ngRoute'])
+  .config(['$routeProvider', function($routeProvider) {
+    $routeProvider.when("/", {
+        templateUrl: "partials/song-list.html",
+        controller: "SongCtrl"
+      });
+    }])
+  .controller('SongCtrl', ["$scope", "$firebaseArray",
+    function($scope, $firebaseArray) {
+    
+      $scope.title = "Music History";
 
-  $scope.delSong = function(song) {
-    var songIndex = $scope.songs.indexOf(song);
-    if (songIndex >= 0) {
-      $scope.songs.splice(songIndex, 1);
-    }
-  };
-  $scope.addSong = function() {
-    $scope.songs.push({
-      name: $scope.newSong.name, 
-      artist: $scope.newSong.artist,
-      album: $scope.newSong.album
-    });
-  };
+      var ref = new Firebase("https://popping-torch-5281.firebaseio.com/songs");
 
-  song_storage.then(
-    function(promiseResolutionData) {
-      console.log("promiseResolutionData", promiseResolutionData);
-     $scope.songs = promiseResolutionData;
-    },
-   function(promiseRejectionError) {
-      console.log("error", promiseRejectionError);
-    });
+      $scope.songs = $firebaseArray(ref);
+      console.log("$scope.songs", $scope.songs);
 
+      $scope.delSong = function(song) {
+        var songIndex = $scope.songs.indexOf(song);
+        $scope.songs.$remove($scope.songs[songIndex]);
+      };
   }]);
+});
+
+
+
+
+// define([
+//   'angular',
+//   'angularRoute'
+//   ], function(angular, angularRoute) {
+
+// angular.module("SongCtrl", ["$scope", "$firebaseArray", function($scope, $firebaseArray) {
+
+//  }]);
+// });
  
 
   // function getSongList() {
